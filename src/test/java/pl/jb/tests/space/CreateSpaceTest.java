@@ -1,7 +1,6 @@
 package pl.jb.tests.space;
 
 import io.restassured.path.json.JsonPath;
-import io.restassured.response.Response;
 import org.assertj.core.api.Assertions;
 import org.json.JSONObject;
 import org.junit.jupiter.api.Test;
@@ -9,8 +8,8 @@ import pl.jb.requests.space.CreateSpaceRequest;
 import pl.jb.requests.space.DeleteSpaceRequest;
 
 class CreateSpaceTest {
-
     private static final String SPACE_NAME = "Space name created with Java";
+
     @Test
     void CreateSpaceTest() {
 
