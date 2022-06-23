@@ -11,7 +11,7 @@ class CreateSpaceTest {
     private static final String SPACE_NAME = "Space name created with Java";
 
     @Test
-    void CreateSpaceTest() {
+    void createSpaceTest() {
 
         JSONObject space = new JSONObject();
         space.put("name", SPACE_NAME);

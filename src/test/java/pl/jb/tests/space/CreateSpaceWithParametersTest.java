@@ -17,7 +17,7 @@ class CreateSpaceWithParametersTest {
     @DisplayName("Create Space with valid data")
     @ParameterizedTest(name = "Create space with name: {0}")
     @MethodSource("sampleSpaceNameData")
-    void CreateSpaceTest(String spaceName) {
+    void createSpaceTest(String spaceName) {
 
         JSONObject space = new JSONObject();
         space.put("name", spaceName);

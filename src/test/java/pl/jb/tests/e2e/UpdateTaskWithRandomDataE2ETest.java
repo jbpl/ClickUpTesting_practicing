@@ -30,7 +30,7 @@ class UpdateTaskWithRandomDataE2ETest {
     }
 
     @BeforeEach
-    void BeforeEach() {
+    void beforeEach() {
         randomSpaceName = faker.food().ingredient();
         randomListName = faker.book().title();
         randomTaskName = faker.name().firstName();
@@ -39,7 +39,7 @@ class UpdateTaskWithRandomDataE2ETest {
 
     @Test
     @Order(1)
-    void CreateSpaceTest() {
+    void createSpaceTest() {
         JSONObject json = new JSONObject();
         json.put("name", randomSpaceName);
 
@@ -54,7 +54,7 @@ class UpdateTaskWithRandomDataE2ETest {
 
     @Test
     @Order(2)
-    void CreateFolderlessListTest() {
+    void createFolderlessListTest() {
         JSONObject json = new JSONObject();
         json.put("name", randomListName);
 
@@ -69,7 +69,7 @@ class UpdateTaskWithRandomDataE2ETest {
 
     @Test
     @Order(3)
-    void CreateTaskTest() {
+    void createTaskTest() {
         JSONObject json = new JSONObject();
         json.put("name", randomTaskName);
         json.put("description", randomDescription);
@@ -88,7 +88,7 @@ class UpdateTaskWithRandomDataE2ETest {
 
     @Test
     @Order(4)
-    void UpdateTaskTest() {
+    void updateTaskTest() {
         JSONObject json = new JSONObject();
         json.put("name", randomTaskName);
         json.put("description", randomDescription);
@@ -103,7 +103,7 @@ class UpdateTaskWithRandomDataE2ETest {
 
     @Test
     @Order(5)
-    void DeleteSpaceTest() {
+    void deleteSpaceTest() {
         final var response = DeleteSpaceRequest.deleteSpace(spaceId);
         Assertions.assertThat(response.statusCode()).isEqualTo(200);
     }
