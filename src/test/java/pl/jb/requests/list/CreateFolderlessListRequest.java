@@ -2,7 +2,6 @@ package pl.jb.requests.list;
 
 import io.restassured.response.Response;
 import org.json.JSONObject;
-import pl.jb.properties.ClickUpProperties;
 import pl.jb.requests.BaseRequest;
 import pl.jb.url.ClickUpUrl;
 

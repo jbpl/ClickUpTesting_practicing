@@ -16,9 +16,9 @@ import pl.jb.requests.task.UpdateTaskRequest;
 class UpdateTaskE2ETest {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(UpdateTaskE2ETest.class);
-    private static String spaceName = "Space created with Java";
-    private static String listName = "List created with Java";
-    private static String taskName = "Task name created with Java";
+    private static final String spaceName = "Space created with Java";
+    private static final String listName = "List created with Java";
+    private static final String taskName = "Task name created with Java";
     private String spaceId;
     private String listId;
     private String taskId;
