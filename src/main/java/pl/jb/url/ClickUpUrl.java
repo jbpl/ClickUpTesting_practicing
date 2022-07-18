@@ -1,5 +1,9 @@
 package pl.jb.url;
 
+import lombok.AccessLevel;
+import lombok.NoArgsConstructor;
+
+@NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class ClickUpUrl {
 
     private static final String BASE_URL = "https://api.clickup.com/api/v2";
@@ -27,6 +31,7 @@ public class ClickUpUrl {
     public static String getSpaceUrl(String spaceId) {
         return SPACE + "/" + spaceId;
     }
+
     public static String getListsUrl(String spaceId) {
         return getSpaceUrl(spaceId) + LIST;
     }
