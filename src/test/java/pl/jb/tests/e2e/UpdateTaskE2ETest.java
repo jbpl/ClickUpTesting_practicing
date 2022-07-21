@@ -16,9 +16,9 @@ import pl.jb.requests.task.UpdateTaskRequest;
 class UpdateTaskE2ETest {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(UpdateTaskE2ETest.class);
-    private static final String spaceName = "Space created with Java";
-    private static final String listName = "List created with Java";
-    private static final String taskName = "Task name created with Java";
+    private static final String SPACE_NAME = "Space created with Java";
+    private static final String LIST_NAME = "List created with Java";
+    private static final String TASK_NAME = "Task name created with Java";
     private String spaceId;
     private String listId;
     private String taskId;
@@ -41,26 +41,26 @@ class UpdateTaskE2ETest {
 
     private String createSpaceStep() {
         JSONObject json = new JSONObject();
-        json.put("name", spaceName);
+        json.put("name", SPACE_NAME);
 
         final var response = CreateSpaceRequest.createSpace(json);
         Assertions.assertThat(response.statusCode()).isEqualTo(200);
 
         JsonPath jsonData = response.jsonPath();
-        Assertions.assertThat(jsonData.getString("name")).isEqualTo(spaceName);
+        Assertions.assertThat(jsonData.getString("name")).isEqualTo(SPACE_NAME);
 
         return jsonData.getString("id");
     }
 
     private String createFolderlessListStep() {
         JSONObject json = new JSONObject();
-        json.put("name", listName);
+        json.put("name", LIST_NAME);
 
         final var response = CreateFolderlessListRequest.createFolderlessList(json, spaceId);
         Assertions.assertThat(response.statusCode()).isEqualTo(200);
 
         JsonPath jsonData = response.jsonPath();
-        Assertions.assertThat(jsonData.getString("name")).isEqualTo(listName);
+        Assertions.assertThat(jsonData.getString("name")).isEqualTo(LIST_NAME);
 
         return jsonData.getString("id");
     }
@@ -68,14 +68,14 @@ class UpdateTaskE2ETest {
     private String createTaskStep() {
 
         CreateTaskRequestDto taskDto = new CreateTaskRequestDto();
-        taskDto.setName(taskName);
+        taskDto.setName(TASK_NAME);
         taskDto.setDescription("Description set with Java");
         taskDto.setStatus("to do");
 
         final var response = CreateTaskRequest.createTask(taskDto, listId);
 
         JsonPath jsonData = response.jsonPath();
-        Assertions.assertThat(jsonData.getString("name")).isEqualTo(taskName);
+        Assertions.assertThat(jsonData.getString("name")).isEqualTo(TASK_NAME);
         Assertions.assertThat(jsonData.getString("description")).isEqualTo("Description set with Java");
         Assertions.assertThat(jsonData.getString("status.status")).isEqualTo("to do");
 
