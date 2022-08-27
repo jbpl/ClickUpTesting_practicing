@@ -1,5 +1,6 @@
 package pl.jb.dto.request.task;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
 
 @Data
@@ -10,7 +11,8 @@ public class CreateTaskRequestDto {
     private String status;
     private String priority;
     private String parent;
-    private String time_estimate;
+    @JsonProperty("time_estimate")
+    private String timeEstimate;
     private String assignees;
     private boolean archived;
 }
